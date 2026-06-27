@@ -1,0 +1,26 @@
+# Cloudflare Pages 設定 (wrangler.toml)
+name = "sanchoku-pochi"
+compatibility_date = "2024-06-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+# 環境変数（本番用）
+[vars]
+NEXTAUTH_URL = "https://your-domain.pages.dev"
+
+# D1 データベース（注文情報・ユーザー情報）
+[[d1_databases]]
+binding = "DB"
+database_name = "sanchoku-db"
+database_id = "your-d1-database-id"
+
+# 環境変数（シークレットは wrangler secret put で設定）
+# - GOOGLE_CLIENT_ID
+# - GOOGLE_CLIENT_SECRET
+# - LINE_CLIENT_ID
+# - LINE_CLIENT_SECRET
+# - LINE_CHANNEL_ACCESS_TOKEN
+# - LINE_CHANNEL_SECRET
+# - SHOPIFY_STORE_DOMAIN
+# - SHOPIFY_STOREFRONT_ACCESS_TOKEN
+# - NEXTAUTH_SECRET
